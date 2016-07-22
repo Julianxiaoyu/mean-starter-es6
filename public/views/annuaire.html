@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-xs-12 col-md-10 col-md-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <h2>Nouveau contact</h2>
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="nom" ng-model='an.annuaire.nom'>
+                <input type="text" class="form-control" placeholder="annuaire" ng-model='an.annuaire.numero'>
+            </div>
+            <button ng-click='an.create()' class="btn btn-default">Add</button>
+        </form>
+        <h2 ng-show='an.annuaires.length>0'>Mes contacts</h2>
+        <div class="panel panel-default" ng-repeat='annuaire in an.annuaires | orderBy: "nom"'>
+            <div class="panel-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="nom" ng-model='annuaire.nom'>
+                        <input type="text" class="form-control" placeholder="numero" ng-model='annuaire.numero'>
+                    </div>
+                    <button ng-click='an.update(todo)' class="btn btn-default">Edit</button>
+                    <button ng-click='an.delete(todo)' class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
